@@ -1,17 +1,17 @@
 module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
+  source  = "terraform-aws-modules/vpc/aws"
   version = "~> 6.0"
 
   name = "${var.project}-${var.env}-vpc"
   cidr = var.vpc_cidr
 
-  azs = ["${var.region}a", "${var.region}b"]
-  private_subnets = var.private_subnet_cidr
-  public_subnets  = var.public_subnet_cidr
+  azs              = ["${var.region}a", "${var.region}b"]
+  private_subnets  = var.private_subnet_cidr
+  public_subnets   = var.public_subnet_cidr
   database_subnets = var.database_subnet_cidr
 
-  enable_nat_gateway = true
-  single_nat_gateway = true
+  enable_nat_gateway           = true
+  single_nat_gateway           = true
   enable_dns_hostnames         = true
   enable_dns_support           = true
   create_database_subnet_group = true
@@ -21,8 +21,8 @@ module "vpc" {
   }
 
   private_subnet_tags = {
-    "kubernetes.io/role/internal-elb"                          = "1"
-    "kubernetes.io/cluster/${var.project}-${var.env}-cluster"  = "owned"
+    "kubernetes.io/role/internal-elb"                         = "1"
+    "kubernetes.io/cluster/${var.project}-${var.env}-cluster" = "owned"
   }
 
   tags = {
