@@ -64,7 +64,7 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan -var=jwt_secret=${{ secrets.JWT_SECRET }} -var=db_password=${{ secrets.DB_PASSWORD }} out=tfplan
+        run: terraform plan -var="jwt_secret=${{ secrets.JWT_SECRET }}" -var="db_password=${{ secrets.DB_PASSWORD }}" -var="github_org=${{ vars.GH_ORG }}" out=tfplan
         id: plan
     
       - name: Check plan status
