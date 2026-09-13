@@ -37,7 +37,8 @@ jobs:
     if: |
         (github.event_name == 'pull_request') || 
         (github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'plan') || 
-        (github.event_name == 'push' && github.ref == 'refs/heads/main')
+        (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+        (github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'apply')
     environment: dev
     defaults:
       run:
@@ -84,6 +85,7 @@ jobs:
         with:
           name: tfplan
           path: envs/dev/tfplan
+          retention-days: 1
 
   # ── Apply ─────────────────────────────────────────────────────────────────
   apply:
