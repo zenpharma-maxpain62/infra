@@ -34,7 +34,8 @@ env:
 jobs:
   plan:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    if: |
+        (github.event_name == 'pull_request') || (github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'plan') || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     environment: dev
     defaults:
       run:
