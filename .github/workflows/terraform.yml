@@ -16,7 +16,6 @@ on:
       action:
         description: 'Terraform action'
         required: true
-        default: 'plan'
         type: choice
         options: [plan, apply, destroy]
       confirm_destroy:
