@@ -47,3 +47,9 @@ variable "max_size" {
   default = 3
   description = "Maximum number of worker nodes"
 }
+
+variable "ec2_access_entry_principal_arns" {
+  type = string
+  description = "List of IAM principal ARNs for EC2 access entry"
+  default = "arn:aws:iam::134448505602:role/adminrole"
+}

@@ -24,6 +24,21 @@ module "eks" {
     eks-pod-identity-agent = { most_recent = true }
   }
 
+  access_entries = {
+    #eks admin access entry
+    ec2_access_entry = {
+      principal_arns = var.ec2_access_entry_principal_arns
+      policy_assertion = {
+        ec2_access_policy = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
+          access_scope = {
+            type = "cluster"
+          }
+        }
+      }
+    }
+  }
+
   eks_managed_node_groups = {
     main = {
       instance_types = var.instance_types
