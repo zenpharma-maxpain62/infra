@@ -24,6 +24,22 @@ module "eks" {
     eks-pod-identity-agent = { most_recent = true }
   }
 
+  access_entries = {
+    # One access entry with a policy associated
+    example = {
+      principal_arn = "arn:aws:iam::134448505602:role/adminrole"
+
+      policy_associations = {
+        example = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
+          access_scope = {
+            type       = "cluster"
+          }
+        }
+      }
+    }
+  }
+
   eks_managed_node_groups = {
     main = {
       instance_types = var.instance_types
