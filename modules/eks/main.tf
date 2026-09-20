@@ -27,11 +27,11 @@ module "eks" {
     access_entries = {
     # One access entry with a policy associated
     ec2_adminrole = {
-      principal_arn = "arn:aws:iam::134448505602:role/adminrole"
+      principal_arn = var.eks_access_entry_principle_arn
 
       policy_associations = {
         ec2_eksadminpolicy = {
-          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
+          policy_arn = var.eks_access_entry_policy_arn
           access_scope = {
             type       = "cluster"
           }
