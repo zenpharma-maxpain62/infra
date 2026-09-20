@@ -47,3 +47,13 @@ variable "max_size" {
   default = 3
   description = "Maximum number of worker nodes"
 }
+
+variable "eks_access_entry_principle_arn" {
+  type = string
+  default = "arn:aws:iam::134448505602:role/adminrole"
+}
+
+variable "eks_access_entry_policy_arn" {
+  type = string
+  default = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
+}
