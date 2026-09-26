@@ -127,4 +127,5 @@ kubectl get pods -n external-secrets
 addingHelmRepo
 installAWSLoadBalancer
 installArgoCD
+installExternalSecretOperator
 verification
