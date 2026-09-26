@@ -72,7 +72,7 @@ installArgoCD()
     	echo "------------------------------------------"
     	else 
             echo -e "\e[31m------------------------------------------------------\e[0m"
-            echo -e "\e[31mPlease verify if AWS Load Balancer Controller Installed successfully or not\e[0m"
+            echo -e "\e[31mPlease verify if argocd Installed successfully or not\e[0m"
             echo -e "\e[31m------------------------------------------------------\e[0m"
     	fi
     fi
