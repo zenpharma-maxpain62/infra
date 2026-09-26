@@ -166,5 +166,4 @@ addingHelmRepo
 installAWSLoadBalancer
 installArgoCD
 installExternalSecretOperator
-registerGitopsRepository
 verification
