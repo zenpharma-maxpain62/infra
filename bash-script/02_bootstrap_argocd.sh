@@ -44,3 +44,6 @@ createPharmaProject()
 {
     kubectl apply -f ./pharma-project.yaml
 }
+
+registerGitopsRepository
+createPharmaProject
