@@ -121,6 +121,7 @@ echo "------------------------------------------"
 kubectl get pods -n kube-system -l app.kubernetes.io/name=aws-load-balancer-controller
 kubectl get pods -n argocd
 kubectl get pods -n external-secrets
+kubectl get secret -l argocd.argoproj.io/secret-type=repository -n argocd
 }
 
 registerGitopsRepository()
@@ -160,5 +161,5 @@ addingHelmRepo
 installAWSLoadBalancer
 installArgoCD
 installExternalSecretOperator
-verification
 registerGitopsRepository
+verification
