@@ -1,7 +1,7 @@
 #!/bin/bash
 
-read "Enter github url: " GITHUB_URL
-read "Enter github username: " GITHUB_USERNAME
+read -p "Enter github url: " GITHUB_URL
+read -p "Enter github username: " GITHUB_USERNAME
 read -rsp "Enter GitHub PAT: " GITHUB_PAT
 
 registerGitopsRepository()
@@ -13,7 +13,7 @@ registerGitopsRepository()
 		echo "------------------------------------------"
 		echo "Register the GitOps Repository in ArgoCD"
 		echo "------------------------------------------"
-		read -rsp "Enter GitHub PAT: " GITHUB_PAT
+		#read -rsp "Enter GitHub PAT: " GITHUB_PAT
 		# Create the secret with repo credentials
 		kubectl create secret generic zen-gitops-repo \
 		  --namespace argocd \
