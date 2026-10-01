@@ -46,10 +46,9 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
       values = [
-        "repo:${var.github_org}@325468345/frontend@1374294155:ref:refs/heads/main",
-        "repo:${var.github_org}@325468345/frontend@1374294155:ref:refs/heads/develop",
-        "repo:${var.github_org}/backend:ref:refs/heads/develop",
-        "repo:${var.github_org}/backend:ref:refs/heads/main",
+        "repo:${var.github_org}@325468345/frontend@1374294155:ref:refs/heads/*",
+        "repo:${var.github_org}@325468345/api-gateway@1392449324:ref:refs/heads/*",
+        "repo:${var.github_org}@325468345/auth-service@1392452286:ref:refs/heads/*"
       ]
     }
   }
