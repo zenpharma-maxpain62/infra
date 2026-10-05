@@ -1,8 +1,8 @@
 #!/bin/bash
 
-read -p "Enter github url: " GITHUB_URL
+read -p "Enter gitops repo url: " GITHUB_URL
 read -p "Enter github username: " GITHUB_USERNAME
-read -rsp "Enter GitHub PAT: " GITHUB_PAT
+read -rsp "Enter gitops repo PAT: " GITHUB_PAT
 
 registerGitopsRepository()
 {
