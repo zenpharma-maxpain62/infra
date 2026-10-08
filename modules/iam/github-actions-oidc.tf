@@ -48,7 +48,13 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
       values = [
         "repo:${var.github_org}@325468345/frontend@1374294155:ref:refs/heads/*",
         "repo:${var.github_org}@325468345/api-gateway@1392449324:ref:refs/heads/*",
-        "repo:${var.github_org}@325468345/auth-service@1392452286:ref:refs/heads/*"
+        "repo:${var.github_org}@325468345/auth-service@1392452286:ref:refs/heads/*",
+        "repo:${var.github_org}@325468345/drug-catalog-service@1392457014:ref:refs/heads/*",
+        "repo:${var.github_org}@325468345/inventory-service@1392459112:ref:refs/heads/*",
+        "repo:${var.github_org}@325468345/manufacturing-service@1392460404:ref:refs/heads/*",
+        "repo:${var.github_org}@325468345/notification-service@1392462514:ref:refs/heads/*",
+        "repo:${var.github_org}@325468345/qc-service@1392464238:ref:refs/heads/*",
+        "repo:${var.github_org}@325468345/supplier-service@1392465260:ref:refs/heads/*"
       ]
     }
   }
