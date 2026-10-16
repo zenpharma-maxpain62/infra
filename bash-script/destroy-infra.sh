@@ -1,6 +1,8 @@
 #!/bin/bash
 kubectl delete externalsecret --all -n dev
 kubectl delete clustersecretstore aws-secrets-manager
+kubectl delete ingress -n dev
+kubectl delete ingress -n argocd
 
 helm uninstall external-secrets -n external-secrets
 helm uninstall argocd -n argocd
