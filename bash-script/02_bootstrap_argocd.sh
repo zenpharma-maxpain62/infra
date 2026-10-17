@@ -3,11 +3,12 @@
 read -p "Enter gitops repo url: " GITHUB_URL
 read -p "Enter github username: " GITHUB_USERNAME
 read -rsp "Enter gitops repo PAT: " GITHUB_PAT
+RESULT=""
 
 gitopsRepositoryExistCheck()
 {
 	kubectl get secret zen-gitops-repo -n argocd > /dev/null 2>&1 
-	export RESULT = echo $?
+	RESULT=echo $?
 	if [[ $RESULT -eq 0 ]]; then
 		echo "GitOps Repository is already registered in ArgoCD"
 		read -p "Register GitOps Repository again? Y/N" REGISTER_ANS
@@ -19,11 +20,10 @@ gitopsRepositoryExistCheck()
 				exit
 				;;
 			*)
-				echo "Invalid input" && exit
+				echo "Invalid input"
 				;;
 		esac
-	else
-		exit
+fi
 }
 
 registerGitopsRepository()
