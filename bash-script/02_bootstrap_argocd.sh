@@ -23,6 +23,8 @@ gitopsRepositoryExistCheck()
 				echo "Invalid input"
 				;;
 		esac
+	else
+		registerGitopsRepository
 fi
 }
 
