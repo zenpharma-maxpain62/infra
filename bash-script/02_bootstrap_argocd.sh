@@ -8,7 +8,7 @@ RESULT=""
 gitopsRepositoryExistCheck()
 {
 	kubectl get secret zen-gitops-repo -n argocd > /dev/null 2>&1 
-	RESULT=echo $?
+	RESULT=$(echo $?)
 	if [[ $RESULT -eq 0 ]]; then
 		echo "GitOps Repository is already registered in ArgoCD"
 		read -p "Register GitOps Repository again? Y/N" REGISTER_ANS
