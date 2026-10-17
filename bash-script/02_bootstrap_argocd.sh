@@ -14,10 +14,13 @@ gitopsRepositoryExistCheck()
 		case $REGISTER_ANS in 
 			y | Y)
 				registerGitopsRepository
+				;;
 			n | N)
 				exit
+				;;
 			*)
 				echo "Invalid input" && exit
+				;;
 		esac
 	else
 		exit
