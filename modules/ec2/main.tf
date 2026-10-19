@@ -34,7 +34,8 @@ module "ec2" {
   instance_type               = "t3.micro"
   key_name                    = "dpp-key"
   subnet_id                   = var.subnet_id
-  security_group_name         = aws_security_group.ec2.name
+  create_security_group       = false
+  vpc_security_group_ids      = [aws_security_group.ec2.id]
   associate_public_ip_address = true
   ami                         = "ami-02d26659fd82cf299"
   user_data                   = file("user-data.sh")
