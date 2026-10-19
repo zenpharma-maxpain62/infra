@@ -37,6 +37,7 @@ module "ec2" {
   security_group_name         = aws_security_group.ec2.name
   associate_public_ip_address = true
   ami                         = "ami-02d26659fd82cf299"
+  user_data = filebase64("user-data-base64")
 
   tags = {
     Project = var.project
