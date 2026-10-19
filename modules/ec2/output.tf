@@ -4,5 +4,5 @@ output "bastion_public_IP" {
 
 output "security_group_id" {
   description = "Security group ID of the EKS node group"
-  value       = module.eks.security_group_id
+  value       = module.ec2.security_group_id
 }
