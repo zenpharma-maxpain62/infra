@@ -23,6 +23,11 @@ variable "eks_node_security_group_id" {
   type        = string
 }
 
+variable "security_group_id" {
+  description = "Security group ID of EKS nodes to allow RDS access"
+  type        = string
+}
+
 variable "db_name" {
   description = "Name of the database to create"
   type        = string
