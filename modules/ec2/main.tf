@@ -31,10 +31,11 @@ module "ec2" {
 
   name = "zenpharma-bastion"
 
-  instance_type = "t3.micro"
-  key_name      = "dpp-key"
-  subnet_id = var.subnet_id
-  security_group_name = aws_security_group.ec2.name
+  instance_type               = "t3.micro"
+  key_name                    = "dpp-key"
+  subnet_id                   = var.subnet_id
+  security_group_name         = aws_security_group.ec2.name
+  associate_public_ip_address = true
 
   tags = {
     Project = var.project
