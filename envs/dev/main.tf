@@ -6,6 +6,14 @@ locals {
 
 data "aws_caller_identity" "current" {}
 
+module "ec2" {
+  source  = "../../modules/ec2"
+  project = local.project
+  env     = local.env
+  vpc_id  = module.vpc.vpc_id
+  subnet_id = module.vpc.public_subnets[0]
+}
+
 module "vpc" {
   source               = "../../modules/vpc"
   project              = local.project
@@ -20,10 +28,10 @@ module "vpc" {
 module "eks" {
   source = "../../modules/eks"
 
-  project            = local.project
-  env                = local.env
-  vpc_id             = module.vpc.vpc_id
-  subnet_ids         = module.vpc.private_subnets
+  project    = local.project
+  env        = local.env
+  vpc_id     = module.vpc.vpc_id
+  subnet_ids = module.vpc.private_subnets
 }
 
 module "rds" {
