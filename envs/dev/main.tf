@@ -44,7 +44,7 @@ module "rds" {
   vpc_id                     = module.vpc.vpc_id
   db_subnet_group_name       = module.vpc.database_subnet_group_name
   eks_node_security_group_id = module.eks.node_security_group_id
-  security_group_id          = aws_security_group.ec2.id
+  security_group_id          = module.ec2.security_group_id
 }
 
 module "ecr" {
