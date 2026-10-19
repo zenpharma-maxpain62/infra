@@ -10,7 +10,7 @@ module "ec2" {
   source  = "../../modules/ec2"
   project = local.project
   env     = local.env
-  vpc_id  = var.vpc_id
+  vpc_id  = module.vpc.vpc_id
 }
 
 module "vpc" {
