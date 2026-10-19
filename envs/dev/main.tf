@@ -11,7 +11,7 @@ module "ec2" {
   project = local.project
   env     = local.env
   vpc_id  = module.vpc.vpc_id
-  subnet_id = module.vpc.public_subnets[0].id
+  subnet_id = module.vpc.public_subnets[0]
 }
 
 module "vpc" {

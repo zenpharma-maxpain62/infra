@@ -19,7 +19,7 @@ resource "aws_security_group" "ec2" {
   }
 
   tags = {
-    Name    = "${var.project}-${var.env}-rds-sg"
+    Name    = "${var.project}-${var.env}-ec2-sg"
     Project = var.project
     Env     = var.env
   }
@@ -34,6 +34,7 @@ module "ec2" {
   instance_type = "t3.micro"
   key_name      = "dpp-key"
   subnet_id = var.subnet_id
+  security_group_name = aws_security_group.ec2.name
 
   tags = {
     Project = var.project
