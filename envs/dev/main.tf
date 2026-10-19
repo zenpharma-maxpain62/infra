@@ -6,6 +6,12 @@ locals {
 
 data "aws_caller_identity" "current" {}
 
+module "ec2" {
+  source = "../../modules/ec2"
+  project = local.project
+  env = local.env
+}
+
 module "vpc" {
   source               = "../../modules/vpc"
   project              = local.project
