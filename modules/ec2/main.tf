@@ -33,6 +33,7 @@ module "ec2" {
 
   instance_type = "t3.micro"
   key_name      = "dpp-key"
+  subnet_id = var.subnet_id
 
   tags = {
     Project = var.project
