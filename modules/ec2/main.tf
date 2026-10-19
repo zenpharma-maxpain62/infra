@@ -29,7 +29,7 @@ module "ec2" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "6.4.1"
 
-  name = zenpharma-bastion
+  name = "zenpharma-bastion"
 
   instance_type = "t3.micro"
   key_name      = "dpp-key"

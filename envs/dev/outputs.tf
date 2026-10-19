@@ -10,5 +10,5 @@ output "eks_cluster_name" {
 
 output "bastion_publicIP" {
   description = "bastion host public IP"
-  value = module.ec2.bastion_public_IP
+  value       = module.ec2.bastion_public_IP
 }
