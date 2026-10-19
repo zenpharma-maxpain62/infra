@@ -64,11 +64,6 @@ jobs:
         run: terraform init
         id: init
 
-      - name: check userdata file
-        run: |
-          ls -l
-          ls -l ./modules/ec2/
-
       - name: Terraform Validate
         run: terraform validate
 
