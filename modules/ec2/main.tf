@@ -39,7 +39,6 @@ module "ec2" {
   ami                         = "ami-02d26659fd82cf299"
   user_data                   = file("user-data.sh")
   iam_instance_profile        = "adminrole"
-  create_security_group       = false
 
   tags = {
     Project = var.project
