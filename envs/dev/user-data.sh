@@ -24,7 +24,10 @@ cp -p /root/kubectl /usr/local/bin/
 #kubectl installation ends here
 
 #cloning practical git repository for eks k8s deployment with help of terraform
-cd ~; git clone https://github.com/maxpain62/practical.git
+cd ~ 
+git clone https://github.com/maxpain62/practical.git
+git clone https://github.com/zenpharma-maxpain62/infra.git
+git clone https://github.com/zenpharma-maxpain62/gitops.git
 #eks k8s deployment ends here
 
 #helm installation starts here
