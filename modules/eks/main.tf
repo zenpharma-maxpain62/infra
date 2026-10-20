@@ -50,16 +50,7 @@ module "eks" {
   }
 
   security_group_additional_rules = {
-     protocol = "tcp"
-     from_port = 443 
-     to_port = 443
-     type = "ingress"
-     description = "Access to eks cluster from EC2"
-     cidr_blocks = ["10.0.0.0/16"]
-  }
-
-  security_group_additional_rules {
-    ec2_node_rule {
+    ec2_node_rule = {
     protocol                   = "tcp"
     from_port                  = 443
     to_port                    = 443
