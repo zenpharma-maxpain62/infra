@@ -55,8 +55,7 @@ module "eks" {
      to_port = 443
      type = "ingress"
      description = "Access to eks cluster from EC2"
-     cidr_blocks = ["10.0.0.0/16"] 
-     source_security_group_id = module.ec2.security_group_id
+     cidr_blocks = ["10.0.0.0/16"]
   }
 
   tags = {
