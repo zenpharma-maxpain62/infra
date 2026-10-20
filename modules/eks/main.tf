@@ -59,15 +59,14 @@ module "eks" {
   }
 
   security_group_additional_rules {
-  description = "List of additional security group rules to add to the cluster security group created. Set `source_node_security_group = true` inside rules to set the `node_security_group` as source"
-  type = map(object({
+    ec2_node_rule {
     protocol                   = "tcp"
     from_port                  = 443
     to_port                    = 443
     type                       = "ingress"
     description                = "Access to eks cluster from EC2"
     cidr_blocks                = ["10.0.0.0/16"]
-  }))
+    } 
 }
 
   tags = {
