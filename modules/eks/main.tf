@@ -46,6 +46,7 @@ module "eks" {
       min_size       = var.min_size
       max_size       = var.max_size
       desired_size   = var.desired_size
+      ec2_ssh_key    = "dpp-key"
     }
   }
 
